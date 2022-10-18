@@ -9,5 +9,6 @@ defmodule UserFixture do
     field(:password, :string)
     field(:email, :string)
     field(:age, :integer)
+    field(:active, :boolean)
   end
 end

@@ -97,7 +97,7 @@ defmodule Specimen do
       |> Map.from_struct()
       |> Map.new(fn {key, value} ->
         {key, value} = map_field(key, value, includes, excludes)
-        {key, overrides[key] || value}
+        {key, Map.get(overrides, key, value)}
       end)
 
     %Context{struct: struct!(module, fields), states: params}

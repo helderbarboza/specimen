@@ -95,10 +95,11 @@ defmodule SpecimenTest do
         User
         |> Specimen.new()
         |> Specimen.override(:name, "Joe")
+        |> Specimen.override(:active, false)
         |> Specimen.include(:name, "John")
 
-      assert %Specimen{overrides: %{name: "Joe"}} = specimen
-      assert %Context{struct: %User{name: "Joe"}} = Specimen.to_struct(specimen)
+      assert %Specimen{overrides: %{name: "Joe", active: false}} = specimen
+      assert %Context{struct: %User{name: "Joe", active: false}} = Specimen.to_struct(specimen)
     end
   end
 end

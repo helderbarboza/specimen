@@ -9,6 +9,7 @@ defmodule Specimen.SetupMigration do
       add(:password, :string)
       add(:email, :string)
       add(:age, :integer)
+      add(:active, :boolean)
     end
   end
 end
